@@ -1,0 +1,797 @@
+/* General Body Styles */
+body {
+    margin: 0;
+    font-family: "Prompt", serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #f8fafc;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Horizontally center */
+    align-items: center;
+    /* Vertically center */
+
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* End of General Body Styles */
+
+
+/* Header Styles */
+header {
+    margin-top: 2em;
+    text-align: center;
+    color: #2d3748;
+    padding: 1em;
+}
+
+section.card {
+    position: relative;
+    /* Adjust this to relative, to avoid overlap */
+    width: 500px;
+    height: 160px;
+    background-color: #f8fafc;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    perspective: 1000px;
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    margin-top: 50px;
+    /* Keeps the card slightly below the header */
+}
+
+.card:hover {
+    transform: scale(1.05);
+    /* box-shadow: 0 8px 16px #2d37487a; */
+    background-color: #f8fafc;
+    /* background: linear-gradient(135deg, #ac46f0 0%, #865ce8 100%); */
+    color: #ffffff;
+}
+
+.card__content {
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #f8fafc;
+    /* background: linear-gradient(135deg, #ac46f0 0%, #865ce8 100%); */
+    transform: rotateX(-90deg);
+    transform-origin: bottom;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover .card__content {
+    transform: rotateX(0deg);
+}
+
+.card__title {
+    margin: 0;
+    padding-left: 5px;
+    font-size: 1.7em;
+    font-weight: 625px;
+    color: #2d3748;
+    font-weight: 700;
+}
+
+.card:hover .card__image {
+    scale: 0.8;
+}
+
+.card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* Ensures the image fits entirely inside the container */
+}
+
+.card__description {
+    margin: 10px 0 0;
+    font-size: 14px;
+    color: #0062ff;
+    line-height: 1.4;
+}
+
+header h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 0.5em;
+}
+
+h2 {
+    text-align: center;
+    color: #2d3748;
+    font-size: 1.7em;
+    font-weight: 550px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-weight: 450px;
+}
+
+/* End of Header Styles */
+
+
+
+/* Number Input Form */
+input[type="number"],
+input[type="text"],
+select {
+    width: 80%;
+    padding: 5px;
+    margin: 5px 0;
+    border: 2px solid #cbd4e0;
+    /* Default border */
+    box-sizing: border-box;
+    border-radius: 4px;
+    /* Optional: smoother corners */
+    transition: all 0.4s ease;
+    /* Smooth focus effect */
+}
+
+#boxForm .boxInput input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+    background-color: white;
+}
+
+/* End of Number Input Form */
+
+
+
+/* Input Form Styles */
+#inputForm {
+    color: rgb(0, 0, 0);
+    margin: 2em auto;
+    text-align: center;
+}
+
+.boxRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.boxRow label {
+    font-size: 0.9em;
+    color: #00d1ff;
+    margin-right: 5px;
+}
+
+.boxRow input {
+    width: 100px;
+    padding: 5px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    background: #2a2a2a;
+    color: white;
+    font-size: 0.9em;
+    box-sizing: border-box;
+}
+
+.boxRow input:focus {
+    outline: none;
+    border-color: #00d1ff;
+    background: #343434;
+    transition: all 0.5s;
+}
+
+/* End of Input Form Styles */
+
+
+
+/* Button Styles */
+button {
+    padding: 12px 24px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    color: white;
+    font-weight: 400;
+    font-family: "Prompt", serif;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 12px -1px rgb(0 0 0 / 0.2);
+}
+
+button:disabled {
+    background: #555555;
+    color: #aaaaaa;
+    cursor: not-allowed;
+}
+
+/* End of Button Styles */
+
+
+
+/* Box List Tab Styles */
+#box-list-tab {
+    max-width: 600px;
+    margin: 2em auto;
+    padding: 1em;
+    background: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+#box-list-tab h3 {
+    font-size: 1.5em;
+    color: #00d1ff;
+    margin-bottom: 1em;
+}
+
+#box-color-list {
+    list-style: none;
+    padding: 0;
+}
+
+#box-color-list li {
+    margin: 0.5em 0;
+    padding: 0.5em;
+    background: #2a2a2a;
+    border-radius: 5px;
+    font-size: 1em;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#box-color-list li span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    border-radius: 50%;
+    background-color: currentColor;
+}
+
+/* End of Box List Tab Styles */
+
+
+
+/* Tooltip Styles */
+#tooltip {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    pointer-events: none;
+    display: none;
+    z-index: 1000;
+    font-family: Arial, sans-serif;
+}
+
+/* End of Tooltip Styles */
+
+
+
+/* Select Dropdown Styles */
+select {
+    width: 120px;
+    padding: 5px;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    background: #2a2a2a;
+    color: white;
+    font-size: 0.9em;
+    box-sizing: border-box;
+}
+
+select:focus {
+    outline: none;
+    background: #343434;
+}
+
+/* End of Select Dropdown Styles */
+
+
+
+/* 3D Container Wrapper Styles */
+#container3D-wrapper {
+    position: relative;
+    max-width: 1200px;
+    margin: 2em auto;
+    padding: 1.5em;
+    background: #000000;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+#container3D {
+    display: flex;
+    position: relative;
+    max-width: 100%;
+    height: 100vh;
+    background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
+    /* color page 3D */
+}
+
+#container3D>*:nth-child(2) {
+    flex-grow: 1;
+}
+
+/* End of 3D Container Wrapper Styles */
+
+
+
+/* Packed Boxes Info Styles */
+#packedBoxesInfo {
+    position: absolute;
+    bottom: 30px;
+    left: 40px;
+    padding: 20px;
+    z-index: 1000;
+    overflow-y: auto;
+
+    height: 85%;
+    width: 250px;
+
+    background: linear-gradient(180deg, #f4f3ff 0%, #bab2eb 100%);
+    color: #2d3748;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.477);
+    backdrop-filter: blur(10px);
+
+    display: none;
+    transition: all 0.3s ease;
+}
+
+.packedBoxInfo {
+    background: white;
+    margin-bottom: 12px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid #6366f1;
+    transition: transform 0.2s;
+}
+
+.packedBoxInfo:hover {
+    transform: translateX(5px);
+}
+
+.packedBoxInfo strong {
+    color: #4f46e5;
+    font-weight: 600;
+}
+
+.packedBoxInfo span {
+    color: #64748b;
+}
+
+/* End of Packed Boxes Info Styles */
+
+/* space */
+.space-stats {
+    /* background: linear-gradient(90deg, #494bbb, #7ba9ff); */
+    background: linear-gradient(90deg, #8157ff, #9e9eff);
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.space-stats h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.2em;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+/* End of space */
+
+/* start please */
+.box.show {
+    display: flex;
+    /* Make visible when active */
+    opacity: 1;
+    /* Fade in effect */
+    transform: translateY(0);
+    /* Reset slide effect */
+}
+
+.box {
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+
+    border-radius: 10px;
+    width: 220px;
+    height: 300px;
+    background-color: rgb(255, 248, 254);
+
+    -webkit-transform: preserve-3d;
+    -ms-transform: preserve-3d;
+    transform: preserve-3d;
+    -webkit-perspective: 2000px;
+    perspective: 2000px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color: #000;
+
+    display: none;
+    /* Default hidden */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    /* Add transition */
+    opacity: 0;
+    /* Default invisible */
+    transform: translateY(20px);
+    /* Start position for slide effect */
+}
+
+.cover {
+    top: 0;
+    position: absolute;
+    background: linear-gradient(180deg, #ebeff5, #e3e9f1);
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-transform-origin: 0;
+    -ms-transform-origin: 0;
+    transform-origin: 0;
+    /* -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.17);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.168); */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.box:hover .cover {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-transform: rotatey(-80deg);
+    -ms-transform: rotatey(-80deg);
+    transform: rotatey(-80deg);
+
+    -webkit-box-shadow: 1px 1px 12px #3b83f6b8;
+    box-shadow: 1px 1px 12px #3b83f6ac;
+}
+
+.box:hover {
+
+    -webkit-box-shadow: 1px 1px 12px #483bf6a3;
+    box-shadow: 1px 1px 12px #573bf6a9;
+}
+
+p {
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    margin: 5px;
+}
+
+.cover__image {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    /* Ensures the image fits entirely inside the container */
+}
+
+.text-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers text horizontally */
+    justify-content: center; /* Centers text vertically */
+    height: 100%; /* Ensure it fills the box */
+    text-align: center; /* Aligns text inside each `<p>` */
+    padding: 10px; /* Optional: Adds padding for spacing */
+    box-sizing: border-box;
+    color: #4736c4;
+}   
+/* End of please */
+
+/* start transition */
+#packedBoxesInfo,
+#unplacedBoxesInfo,
+#space {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    /* Start hidden */
+    transform: translateY(-20px);
+    /* Slide up effect */
+}
+
+.packedBoxInfo.show,
+#packedBoxesInfo.show,
+#unplacedBoxesInfo.show,
+#space.show {
+    opacity: 1;
+    transform: translateY(0);
+    /* Reset slide-up effect */
+}
+
+#packedBoxesInfo {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#packedBoxesInfo.show {
+    opacity: 1;
+}
+
+/* End of transition */
+
+
+
+/* Base Table Styles */
+#baseBox table {
+    color: aliceblue;
+    background-color: #e5dbff;
+    border-radius: 16px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+#baseBox th,
+#baseBox td {
+    font-weight: 450;
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #c9c9c9;
+}
+
+#baseBox th {
+    padding: 16px;
+    width: 30%;
+    background-color: #8157ff;
+}
+
+#baseBox input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 2px solid #cbd4e0;
+    border-radius: 8px;
+    transition: all 0.4s ease;
+}
+
+#baseBox input:focus {
+    outline: none;
+    border-color: #5d3bf6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* End of Base Table Styles */
+
+
+
+/* Box Infomation Table Styles */
+#boxTable {
+    color: #000;
+    width: 100%;
+    border-collapse: separate;
+    /* เปลี่ยนจาก collapse เป็น separate */
+    border-spacing: 0;
+    /* ป้องกันช่องว่างระหว่างเซลล์ */
+    margin: 20px auto;
+    border-radius: 10px;
+    /* เพิ่มความมนให้ตาราง */
+    overflow: hidden;
+    /* ป้องกันเนื้อหาล้นขอบมน */
+}
+
+#boxTable th,
+#boxTable td {
+    border: 1px solid #c9c9c9;
+    /*#312f4ba1*/
+    padding: 10px;
+    text-align: center;
+}
+
+#boxTable th {
+    background-color: #3078ff;
+    color: aliceblue;
+    font-weight: 450;
+}
+
+table {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1000px;
+    border-collapse: separate;
+    /* เปลี่ยนจาก collapse เป็น separate */
+    border-spacing: 0;
+    /* ป้องกันช่องว่างระหว่างเซลล์ */
+    background-color: #d9f2ff;
+    border-radius: 10px;
+    /* เพิ่มความมนให้ตาราง */
+    overflow: hidden;
+    /* ป้องกันเนื้อหาล้นขอบมน */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#boxTable input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 2px solid #cbd4e0;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+/* End of Box Infomation Table Styles */
+
+
+
+/* Delete Button Styles */
+.deleteBtn {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    padding: 8px 16px;
+}
+
+.deleteBtn:hover {
+    background-color: #c0392b;
+}
+
+/* End of Delete Button Styles */
+
+
+
+/* Switch Styles */
+.display-info {
+    color: #2d3748;
+    font-size: 14px;
+    text-align: right;
+    position: fixed;
+    top: 22px;
+    right: 75px;
+    z-index: 1000;
+}
+
+.switch {
+    --switch-width: 46px;
+    --switch-height: 24px;
+    --switch-bg: rgb(131, 131, 131);
+    --switch-checked-bg: rgb(0, 218, 80);
+    --switch-offset: calc((var(--switch-height) - var(--circle-diameter)) / 2);
+    --switch-transition: all .2s cubic-bezier(0.27, 0.2, 0.25, 1.51);
+    --circle-diameter: 18px;
+    --circle-bg: #fff;
+    --circle-shadow: 1px 1px 2px rgba(146, 146, 146, 0.45);
+    --circle-checked-shadow: -1px 1px 2px rgba(163, 163, 163, 0.45);
+    --circle-transition: var(--switch-transition);
+    --icon-transition: all .2s cubic-bezier(0.27, 0.2, 0.25, 1.51);
+    --icon-cross-color: var(--switch-bg);
+    --icon-cross-size: 6px;
+    --icon-checkmark-color: var(--switch-checked-bg);
+    --icon-checkmark-size: 10px;
+    --effect-width: calc(var(--circle-diameter) / 2);
+    --effect-height: calc(var(--effect-width) / 2 - 1px);
+    --effect-bg: var(--circle-bg);
+    --effect-border-radius: 1px;
+    --effect-transition: all .2s ease-in-out;
+
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: inline-block;
+}
+
+.switch input {
+    display: none;
+}
+
+.switch {
+    display: inline-block;
+}
+
+.switch svg {
+    transition: var(--icon-transition);
+    position: absolute;
+    height: auto;
+}
+
+.switch .checkmark {
+    width: var(--icon-checkmark-size);
+    color: var(--icon-checkmark-color);
+    transform: scale(0);
+}
+
+.switch .cross {
+    width: var(--icon-cross-size);
+    color: var(--icon-cross-color);
+}
+
+.slider {
+    box-sizing: border-box;
+    width: var(--switch-width);
+    height: var(--switch-height);
+    background: var(--switch-bg);
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: var(--switch-transition);
+    cursor: pointer;
+}
+
+.circle {
+    width: var(--circle-diameter);
+    height: var(--circle-diameter);
+    background: var(--circle-bg);
+    border-radius: inherit;
+    box-shadow: var(--circle-shadow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--circle-transition);
+    z-index: 1;
+    position: absolute;
+    left: var(--switch-offset);
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    width: var(--effect-width);
+    height: var(--effect-height);
+    left: calc(var(--switch-offset) + (var(--effect-width) / 2));
+    background: var(--effect-bg);
+    border-radius: var(--effect-border-radius);
+    transition: var(--effect-transition);
+}
+
+/* Actions */
+.switch input:checked+.slider {
+    background: var(--switch-checked-bg);
+}
+
+.switch input:checked+.slider .checkmark {
+    transform: scale(1);
+}
+
+.switch input:checked+.slider .cross {
+    transform: scale(0);
+}
+
+.switch input:checked+.slider::before {
+    left: calc(100% - var(--effect-width) - (var(--effect-width) / 2) - var(--switch-offset));
+}
+
+.switch input:checked+.slider .circle {
+    left: calc(100% - var(--circle-diameter) - var(--switch-offset));
+    box-shadow: var(--circle-checked-shadow);
+}
+
+/* End of Switch Styles */
